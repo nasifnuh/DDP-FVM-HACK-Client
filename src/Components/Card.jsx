@@ -1,8 +1,31 @@
-import React from 'react';
+import { useDraggable } from '@dnd-kit/core';
 
-export default function Card({ name, category, reward }) {
+export default function Card({ name, category, reward, id, parent, index }) {
+    const { attributes, listeners, setNodeRef, transform } = useDraggable({
+        id: id,
+        data: {
+            name,
+            category,
+            reward,
+            parent,
+            index,
+        },
+    });
+
+    const style = transform
+        ? {
+              transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+          }
+        : undefined;
+
     return (
-        <div className='mx-2 w-[16rem] rounded border border-slate-500 bg-[#2A2C37] text-base text-white'>
+        <div
+            ref={setNodeRef}
+            style={style}
+            {...listeners}
+            {...attributes}
+            className='w-full rounded border border-slate-500 bg-[#2A2C37] text-base text-white'
+        >
             <div className='p-3'>
                 <p>{name}</p>
                 <div>{category}</div>
