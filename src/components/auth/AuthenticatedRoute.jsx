@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
 
-import useUserData from "../../utils";
+import { useUserData } from "../../utils";
 
 const Index = ({ component: Component, roles, ...otherProps }) => {
   const { userData } = useUserData();

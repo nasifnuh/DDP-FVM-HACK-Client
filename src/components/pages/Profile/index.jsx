@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "primereact/button";
 
 import Layout from "../../templates/layout";
 import TextField from "../../templates/textField";
@@ -47,11 +48,16 @@ const Index = () => {
               value={twitter}
             />
             <TextField
-              containerClassNames="w-full"
+              containerClassNames="w-full mb-5"
               onChangeHandler={(e) => setBio(e.target.value)}
               title="Bio"
               textArea={true}
               value={bio}
+            />
+            <Button
+              className="p-button-info w-max"
+              icon="pi pi-save"
+              label="Save"
             />
           </div>
           <div className="h-max w-1/4 rounded-lg bg-[#f3f4f6] p-6">

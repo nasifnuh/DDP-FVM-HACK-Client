@@ -37,7 +37,7 @@ const Header = () => {
         <div>
           <button
             className="mx-3 cursor-pointer outline-none"
-            onClick={signOut}
+            onClick={() => navigate("/profile")}
           >
             Profile
           </button>

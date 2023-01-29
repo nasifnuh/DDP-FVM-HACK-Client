@@ -61,6 +61,7 @@ const Index = ({ modalOpen, openModalHandler }) => {
           containerClassNames="w-full mb-5"
           onChangeHandler={(e) => setStakeValue(e.target.value)}
           title="Amount"
+          type="number"
           value={stakeValue}
         />
         <Button
@@ -76,7 +77,7 @@ const Index = ({ modalOpen, openModalHandler }) => {
         style={{ width: "25vw" }}
         visible={openStakeErrorModal}
       >
-        <div className="mb-5 text-center">Oh no, Stake failed 😞</div>
+        <div className="mb-5 text-center">Oh no, stake failed 😞</div>
         <Button
           className="p-button-info w-full"
           label="Back"
