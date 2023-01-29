@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <Layout>
       <div className="w-full">
-        <div className="my-3 text-3xl font-medium">Profile</div>
+        <div className="mb-3 text-3xl font-medium">Profile</div>
         <div className="mt-10 flex w-full gap-5">
           <div className="w-3/4 rounded-lg bg-[#f3f4f6] p-6">
             <TextField

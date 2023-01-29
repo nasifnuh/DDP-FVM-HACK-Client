@@ -8,8 +8,8 @@ import "primeicons/primeicons.css"; //icons
 
 import AuthenticatedRoute from "./components/auth/AuthenticatedRoute";
 
+import CreateTask from "./components/pages/CreateTask";
 import Explore from "./components/pages/Explore";
-import Home from "./components/pages/Home";
 import PageNotFound from "./components/pages/PageNotFound";
 import Profile from "./components/pages/Profile";
 import TaskBoard from "./components/pages/TaskBoard";
@@ -18,11 +18,11 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Route exact path="/" component={Home} />
-        {/* Remove below 3 routes and use the commented <Switch></Switch> when been made dynamic */}
-        <Route exact path="/explore" component={Explore} />
+        {/* Remove below 4 routes and use the commented <Switch></Switch> when been made dynamic */}
+        <Route exact path="/" component={Explore} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/board" component={TaskBoard} />
+        <Route exact path="/create-task" component={CreateTask} />
         {/* <Switch>
           <AuthenticatedRoute
             exact
@@ -32,7 +32,7 @@ const App = () => {
           />
           <AuthenticatedRoute
             exact
-            path="/explore"
+            path="/"
             component={Explore}
             roles={[USER_DEVELOPER, USER_REVIEWER, USER_TESTER]}
           />

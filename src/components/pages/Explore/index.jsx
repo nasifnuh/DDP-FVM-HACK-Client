@@ -5,7 +5,7 @@ import { Dialog } from "primereact/dialog";
 import Card from "../../pages/Explore/Card";
 import Layout from "../../templates/layout";
 import TextField from "../../templates/textField";
-import { useUserData } from "../../../utils";
+import { navigate, useUserData } from "../../../utils";
 
 const Index = () => {
   const { userData } = useUserData();
@@ -15,8 +15,8 @@ const Index = () => {
   const [name, setName] = useState("");
   return (
     <Layout>
-      <div className="m-auto w-full lg:w-3/5 xl:w-1/2 ">
-        <div className="my-3 flex items-center justify-between">
+      <div className="m-auto w-full">
+        <div className="mb-3 flex items-center justify-between">
           <div className="text-3xl font-medium">Open Tasks</div>
           {!userData && (
             <Button
@@ -27,6 +27,7 @@ const Index = () => {
           )}
         </div>
         <div className="flex flex-col gap-5">
+          <Card />
           <Card />
         </div>
       </div>
@@ -65,7 +66,7 @@ const Index = () => {
         <Button
           className="p-button-info w-full"
           label="Profile"
-          onClick={() => setOpenCreatedModal(false)}
+          onClick={() => navigate("/profile")}
         />
       </Dialog>
     </Layout>

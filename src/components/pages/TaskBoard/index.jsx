@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <Layout>
       <div className="w-full">
-        <div className="my-3 text-3xl font-medium">My Task Board</div>
+        <div className="mb-3 text-3xl font-medium">My Task Board</div>
         <Board />
       </div>
     </Layout>
