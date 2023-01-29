@@ -18,51 +18,51 @@ const Index = () => {
         </span>
         <div className="flex gap-10">
           <Button
-            onClick={() => navigate("/explore")}
             label="Explore tasks..."
+            onClick={() => navigate("/explore")}
           />
           <Button
-            onClick={() => setOpenNameModal(true)}
-            label="Connect Wallet"
             className="p-button-help"
+            label="Connect Wallet"
+            onClick={() => setOpenNameModal(true)}
           />
         </div>
       </div>
       <Dialog
-        header="You go as.."
-        visible={openNameModal}
         draggable={false}
-        style={{ width: "25vw" }}
+        header="You go as.."
         onHide={() => setOpenNameModal(false)}
+        style={{ width: "25vw" }}
+        visible={openNameModal}
       >
         <TextField
-          title="Name"
-          value={name}
           containerClassNames="w-full mb-5"
           onChangeHandler={(e) => setName(e.target.value)}
+          title="Name"
+          value={name}
         />
         <Button
-          label="Continue"
           className="p-button-info w-full"
+          label="Continue"
           onClick={() => {
-            setOpenNameModal(false);
             setOpenCreatedModal(true);
+            setOpenNameModal(false);
           }}
         />
       </Dialog>
       <Dialog
-        header="Login"
-        visible={openCreatedModal}
         draggable={false}
-        style={{ width: "25vw" }}
+        header="Login"
         onHide={() => setOpenCreatedModal(false)}
+        style={{ width: "25vw" }}
+        visible={openCreatedModal}
       >
         <div className="mb-5 text-center">
           Account created successfully 👏👏
         </div>
         <Button
-          label="Profile"
           className="p-button-info w-full"
+          label="Profile"
           onClick={() => setOpenCreatedModal(false)}
         />
       </Dialog>

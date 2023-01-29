@@ -13,11 +13,11 @@ const Index = ({ modalOpen, openModalHandler }) => {
   return (
     <>
       <Dialog
-        header="Task Name"
-        visible={modalOpen}
         draggable={false}
-        style={{ width: "900px" }}
+        header="Task Name"
         onHide={openModalHandler}
+        style={{ width: "900px" }}
+        visible={modalOpen}
       >
         <div className="mb-5">
           <p>Task description</p>
@@ -32,18 +32,18 @@ const Index = ({ modalOpen, openModalHandler }) => {
         </div>
         <div className="flex gap-5">
           <Button
+            className="p-button-info"
             label="Join as developer"
-            className="p-button-info"
             onClick={() => setOpenStakeModal(true)}
           />
           <Button
+            className="p-button-info"
             label="Join as tester"
-            className="p-button-info"
             onClick={() => setOpenStakeModal(true)}
           />
           <Button
-            label="Join as reviewer"
             className="p-button-info"
+            label="Join as reviewer"
             onClick={() => setOpenStakeModal(true)}
           />
         </div>
@@ -51,35 +51,35 @@ const Index = ({ modalOpen, openModalHandler }) => {
       </Dialog>
 
       <Dialog
-        header="Confirmation"
-        visible={openStakeModal}
         draggable={false}
-        style={{ width: "25vw" }}
+        header="Confirmation"
         onHide={() => setOpenStakeModal(false)}
+        style={{ width: "25vw" }}
+        visible={openStakeModal}
       >
         <TextField
-          title="Amount"
-          value={stakeValue}
           containerClassNames="w-full mb-5"
           onChangeHandler={(e) => setStakeValue(e.target.value)}
+          title="Amount"
+          value={stakeValue}
         />
         <Button
-          label="Stake"
           className="p-button-info w-full"
+          label="Stake"
           onClick={() => setOpenStakeErrorModal(true)}
         />
       </Dialog>
       <Dialog
-        header="Error"
-        visible={openStakeErrorModal}
         draggable={false}
-        style={{ width: "25vw" }}
+        header="Error"
         onHide={() => setOpenStakeErrorModal(false)}
+        style={{ width: "25vw" }}
+        visible={openStakeErrorModal}
       >
         <div className="mb-5 text-center">Oh no, Stake failed 😞</div>
         <Button
-          label="Back"
           className="p-button-info w-full"
+          label="Back"
           onClick={() => setOpenStakeErrorModal(false)}
         />
       </Dialog>

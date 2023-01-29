@@ -3,12 +3,12 @@ import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 
 const Index = ({
+  containerClassNames = "",
+  onChangeHandler,
+  textArea = false,
   title,
   type = "text",
   value,
-  textArea = false,
-  containerClassNames = "",
-  onChangeHandler,
 }) => {
   return (
     <div className={`flex flex-col items-start ${containerClassNames}`}>
@@ -18,19 +18,19 @@ const Index = ({
       <div className="relative w-full">
         {!textArea ? (
           <InputText
+            className="h-full w-full"
+            onChange={onChangeHandler}
             type={type}
             value={value}
-            onChange={onChangeHandler}
-            className="h-full w-full"
           />
         ) : (
           <InputTextarea
-            rows={5}
-            cols={30}
-            value={value}
-            onChange={onChangeHandler}
             autoResize
             className="h-full w-full"
+            cols={30}
+            onChange={onChangeHandler}
+            rows={5}
+            value={value}
           />
         )}
       </div>

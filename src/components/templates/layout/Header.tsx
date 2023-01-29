@@ -12,22 +12,22 @@ const Header = () => {
   return (
     <nav className="fixed z-50 flex h-16 w-full items-center justify-between border border-gray-300 bg-gray-100 px-6 text-gray-700 shadow-md">
       <img
-        src="/assets/react.svg"
         alt="Logo"
         className="mr-3 h-12 w-12 object-contain"
         onClick={() => navigate("/")}
+        src="/assets/react.svg"
       />
       {userData && (
         <div>
           <button
-            onClick={() => navigate("/explore")}
             className="mx-3 cursor-pointer outline-none"
+            onClick={() => navigate("/explore")}
           >
             Explore
           </button>
           <button
-            onClick={() => navigate("/board")}
             className="mx-3 cursor-pointer outline-none"
+            onClick={() => navigate("/board")}
           >
             Task Board
           </button>
@@ -36,14 +36,14 @@ const Header = () => {
       {userData && (
         <div>
           <button
-            onClick={signOut}
             className="mx-3 cursor-pointer outline-none"
+            onClick={signOut}
           >
             Profile
           </button>
           <button
-            onClick={signOut}
             className="ml-3 cursor-pointer outline-none"
+            onClick={signOut}
           >
             Sign Out
           </button>
