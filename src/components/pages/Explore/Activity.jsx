@@ -6,7 +6,10 @@ const Index = () => {
   return (
     <div className="mt-5">
       <span className="font-medium">Activity</span>
-      <ActivityItem />
+      <div className="mt-3 flex flex-col gap-3">
+        <ActivityItem />
+        <ActivityItem />
+      </div>
     </div>
   );
 };

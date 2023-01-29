@@ -11,7 +11,7 @@ import Profile from "./components/pages/Profile";
 import TaskBoard from "./components/pages/TaskBoard/";
 
 function App() {
-  return <TaskBoard />;
+  return <Profile />;
 }
 
 export default App;

@@ -4,6 +4,7 @@ import { InputTextarea } from "primereact/inputtextarea";
 
 const Index = ({
   containerClassNames = "",
+  disabled = false,
   onChangeHandler,
   textArea = false,
   title,
@@ -22,6 +23,7 @@ const Index = ({
             onChange={onChangeHandler}
             type={type}
             value={value}
+            disabled={disabled}
           />
         ) : (
           <InputTextarea

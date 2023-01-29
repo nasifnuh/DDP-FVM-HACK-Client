@@ -24,13 +24,13 @@ export default function Card({ name, category, reward, id, parent, index }) {
       style={style}
       {...listeners}
       {...attributes}
-      className="w-full rounded border border-slate-500 bg-white text-base"
+      className="w-full rounded-lg border border-slate-500 bg-white text-base"
     >
       <div className="p-3">
         <p>{name}</p>
         <div>{category}</div>
       </div>
-      <div className="flex justify-between rounded-b px-3 py-1">
+      <div className="flex justify-between rounded-lg-b px-3 py-1">
         <p className="text-sm">{reward}</p>
         <p className="cursor-pointer text-sm">Submit Work</p>
       </div>

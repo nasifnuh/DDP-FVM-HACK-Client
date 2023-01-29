@@ -12,7 +12,7 @@ const Index = ({ task }) => {
           <div className="flex">
             <img
               src="https://api.lorem.space/image/fashion?w=150&h=150"
-              className="mr-10 w-20 rounded object-contain"
+              className="mr-10 w-20 rounded-lg object-contain"
             />
             <div>
               <p className="text-lg font-medium">Task Name</p>
@@ -21,7 +21,7 @@ const Index = ({ task }) => {
               </span>
             </div>
           </div>
-          <div className="rounded bg-[#1d1e26] px-3 py-1 text-center text-sm text-white">
+          <div className="rounded-lg bg-[#1d1e26] px-3 py-1 text-center text-sm text-white">
             $10 / hour
           </div>
         </div>
