@@ -1,11 +1,10 @@
+import { Button } from "primereact/button";
 import React from "react";
-import useUserData from "../../../services/auth/useUserData";
+import { useUserData, navigate } from "../../../utils";
 
 const Header = () => {
   const { userData } = useUserData();
-  const navigate = (path: string) => {
-    window.location.pathname = path;
-  };
+
   const signOut = () => {
     localStorage.clear();
     window.location.pathname = "/";
@@ -35,7 +34,7 @@ const Header = () => {
           </button>
         </div>
       )}
-      {userData ? (
+      {userData && (
         <div>
           <button
             onClick={signOut}
@@ -50,10 +49,6 @@ const Header = () => {
             Sign Out
           </button>
         </div>
-      ) : (
-        <button onClick={signOut} className="mx-3 cursor-pointer outline-none">
-          Connect Wallet
-        </button>
       )}
     </nav>
   );

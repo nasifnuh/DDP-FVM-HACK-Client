@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useUserData() {
+export function useUserData() {
   const getData = () => {
     const rawData = localStorage.getItem("user-data");
     const userData = rawData !== null ? JSON.parse(rawData) : null;
@@ -19,3 +19,7 @@ export default function useUserData() {
     userData,
   };
 }
+
+export const navigate = (path) => {
+  window.location.pathname = path;
+};
