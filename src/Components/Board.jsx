@@ -44,43 +44,49 @@ export default function Board() {
     const [inProgressItems, setInProgressItems] = useState(progressList);
     const [doneItems, setDoneItems] = useState(doneList);
 
+    function handleDragEnd(e) {
+        const container = e.over?.id;
+        const item = {
+            name: e.active.data.current?.name ?? '',
+            category: e.active.data.current?.category ?? '',
+            reward: e.active.data.current?.reward ?? '',
+        };
+        const index = e.active.data.current?.index ?? 0;
+        const parent = e.active.data.current?.parent ?? 'ToDo';
+
+        if (parent === container || container === undefined) {
+            return;
+        }
+
+        if (container === 'ToDo') {
+            setTodoItems([...todoItems, item]);
+        } else if (container === 'Done') {
+            setDoneItems([...doneItems, item]);
+        } else {
+            setInProgressItems([...inProgressItems, item]);
+        }
+        if (parent === 'ToDo') {
+            setTodoItems([
+                ...todoItems.slice(0, index),
+                ...todoItems.slice(index + 1),
+            ]);
+        } else if (parent === 'Done') {
+            setDoneItems([
+                ...doneItems.slice(0, index),
+                ...doneItems.slice(index + 1),
+            ]);
+        } else {
+            setInProgressItems([
+                ...inProgressItems.slice(0, index),
+                ...inProgressItems.slice(index + 1),
+            ]);
+        }
+    }
+
     return (
         <DndContext
             collisionDetection={rectIntersection}
-            onDragEnd={(e) => {
-                const container = e.over?.id;
-                const item = {
-                    name: e.active.data.current?.name ?? '',
-                    category: e.active.data.current?.category ?? '',
-                    reward: e.active.data.current?.reward ?? '',
-                };
-                const index = e.active.data.current?.index ?? 0;
-                const parent = e.active.data.current?.parent ?? 'ToDo';
-
-                if (container === 'ToDo') {
-                    setTodoItems([...todoItems, item]);
-                } else if (container === 'Done') {
-                    setDoneItems([...doneItems, item]);
-                } else {
-                    setInProgressItems([...inProgressItems, item]);
-                }
-                if (parent === 'ToDo') {
-                    setTodoItems([
-                        ...todoItems.slice(0, index),
-                        ...todoItems.slice(index + 1),
-                    ]);
-                } else if (parent === 'Done') {
-                    setDoneItems([
-                        ...doneItems.slice(0, index),
-                        ...doneItems.slice(index + 1),
-                    ]);
-                } else {
-                    setInProgressItems([
-                        ...inProgressItems.slice(0, index),
-                        ...inProgressItems.slice(index + 1),
-                    ]);
-                }
-            }}
+            onDragEnd={handleDragEnd}
         >
             <div className='flex h-screen gap-4 bg-[#121217] p-8 text-white'>
                 <List title='ToDo' items={todoItems} />
