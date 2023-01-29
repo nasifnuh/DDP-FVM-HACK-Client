@@ -8,3 +8,7 @@ body {
   min-height: 100vh;
   padding: 6rem 3rem 2rem 3rem;
 }
+
+.p-card-content {
+  padding: unset !important;
+}

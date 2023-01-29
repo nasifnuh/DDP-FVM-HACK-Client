@@ -12,14 +12,16 @@ const Index = ({
 }) => {
   return (
     <div className={`flex flex-col items-start ${containerClassNames}`}>
-      <div className={`font-medium text-sm flex-shrink-0 mb-1`}>{title}</div>
+      {title && (
+        <div className={`mb-1 flex-shrink-0 text-sm font-medium`}>{title}</div>
+      )}
       <div className="relative w-full">
         {!textArea ? (
           <InputText
             type={type}
             value={value}
             onChange={onChangeHandler}
-            className="w-full h-full"
+            className="h-full w-full"
           />
         ) : (
           <InputTextarea
@@ -28,7 +30,7 @@ const Index = ({
             value={value}
             onChange={onChangeHandler}
             autoResize
-            className="w-full h-full"
+            className="h-full w-full"
           />
         )}
       </div>

@@ -8,7 +8,7 @@ const Index = ({ component: Component, roles, ...otherProps }) => {
 
   const userRoles = roles ? roles : [];
   const userHasRequiredRole =
-    userData && userRoles.includes(userData.role) ? true : false;
+    userData && userRoles.includes(userData.role) ? true : false; //Can be removed if unnecessary; "DEVELOPER" || "REVIEWER" || "TESTER" || "TASK OWNER"
   const isAuthenticated = userData !== null ? true : false;
   return (
     <Route
