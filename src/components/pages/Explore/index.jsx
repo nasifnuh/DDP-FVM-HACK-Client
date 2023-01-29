@@ -16,8 +16,8 @@ const Index = () => {
   return (
     <Layout>
       <div className="m-auto w-full lg:w-3/5 xl:w-1/2 ">
-        <div className="mt-10 mb-14 flex items-center justify-between">
-          <span className="text-3xl font-medium">Open Tasks</span>
+        <div className="my-3 flex items-center justify-between">
+          <div className="text-3xl font-medium">Open Tasks</div>
           {!userData && (
             <Button
               onClick={() => setOpenNameModal(true)}

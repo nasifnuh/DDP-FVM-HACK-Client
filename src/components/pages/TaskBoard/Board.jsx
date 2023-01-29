@@ -82,7 +82,7 @@ export default function Board() {
         }
       }}
     >
-      <div className="flex h-screen gap-4 p-8">
+      <div className="flex gap-4 p-8">
         <List title="ToDo" items={todoItems} />
         <List title="Progress" items={inProgressItems} />
         <List title="Done" items={doneItems} />
