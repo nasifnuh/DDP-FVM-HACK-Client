@@ -7,12 +7,16 @@ import Layout from '../../templates/layout';
 import TextField from '../../templates/textField';
 import { useUserData } from '../../../utils';
 
+import '../../../App.css';
+
 const Index = () => {
     const { userData } = useUserData();
 
     const [openNameModal, setOpenNameModal] = useState(false);
     const [openCreatedModal, setOpenCreatedModal] = useState(false);
     const [name, setName] = useState('');
+
+    console.log(localStorage.getItem('theme'));
     return (
         <Layout>
             <div className='m-auto w-full lg:w-3/5 xl:w-1/2 '>
@@ -32,13 +36,14 @@ const Index = () => {
             </div>
             <Dialog
                 draggable={false}
-                header='You go as..'
+                header='You go as...'
                 onHide={() => setOpenNameModal(false)}
                 style={{ width: '25vw' }}
                 visible={openNameModal}
+                className='mydialog'
             >
                 <TextField
-                    containerClassNames='w-full mb-5'
+                    containerClassNames='w-full mb-5 dark:text-white'
                     onChangeHandler={(e) => setName(e.target.value)}
                     title='Name'
                     value={name}

@@ -1,14 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-  font-family: "Roboto", "sans-serif" !important;
+    font-family: 'Roboto', 'sans-serif' !important;
 }
 
 .children > div:first-child {
-  min-height: 100vh;
-  padding: 6rem 3rem 2rem 3rem;
+    min-height: 100vh;
+    padding: 6rem 3rem 2rem 3rem;
 }
 
 .p-card-content {
-  padding: unset !important;
+    padding: unset !important;
+}
+
+.p-dialog {
+    background-color: black;
+}
+
+.mydialog .p-dialog .p-dialog-content {
+    background: #000000;
+    color: #495057;
+    padding: 0 1.5rem 2rem 1.5rem;
 }

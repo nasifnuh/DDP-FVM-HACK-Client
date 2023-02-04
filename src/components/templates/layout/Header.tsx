@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useUserData, navigate } from '../../../utils';
+import 'primeicons/primeicons.css';
 
 const Header = () => {
     const { userData } = useUserData();
@@ -80,7 +81,11 @@ const Header = () => {
                         className='ml-3 cursor-pointer rounded bg-slate-900 px-2 py-1 text-white outline-none dark:bg-white dark:text-black'
                         onClick={handleThemeSwitch}
                     >
-                        {theme !== 'dark' ? 'Dark' : 'Light'}
+                        {theme !== 'dark' ? (
+                            <span className='pi pi-moon items-center justify-center'></span>
+                        ) : (
+                            <span className='pi pi-sun items-center justify-center'></span>
+                        )}
                     </button>
                 </div>
             )}
