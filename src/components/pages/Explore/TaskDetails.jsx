@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 import Activity from './Activity';
 import TextField from '../../templates/textField';
+
+const markdown =
+    "**Step 1**: To convert a task into a bounty so that it's easy for contributors to spot when there's a reward for completing work, click `Add Bounty`.";
 
 const Index = ({ modalOpen, openModalHandler }) => {
     const [openStakeModal, setOpenStakeModal] = useState(false);
@@ -21,6 +26,9 @@ const Index = ({ modalOpen, openModalHandler }) => {
             >
                 <div className='mb-5'>
                     <p>Task description</p>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {markdown}
+                    </ReactMarkdown>
                     <div className='mt-5'>
                         <p>
                             <strong>Prize: </strong>$200

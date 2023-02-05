@@ -7,8 +7,6 @@ import Layout from '../../templates/layout';
 import TextField from '../../templates/textField';
 import { useUserData } from '../../../utils';
 
-import '../../../App.css';
-
 const Index = () => {
     const { userData } = useUserData();
 
