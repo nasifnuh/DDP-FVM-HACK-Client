@@ -16,7 +16,6 @@ const Index = () => {
     const [openCreatedModal, setOpenCreatedModal] = useState(false);
     const [name, setName] = useState('');
 
-    console.log(localStorage.getItem('theme'));
     return (
         <Layout>
             <div className='m-auto w-full lg:w-3/5 xl:w-1/2 '>
@@ -40,7 +39,7 @@ const Index = () => {
                 onHide={() => setOpenNameModal(false)}
                 style={{ width: '25vw' }}
                 visible={openNameModal}
-                className='mydialog'
+                className='dark'
             >
                 <TextField
                     containerClassNames='w-full mb-5 dark:text-white'

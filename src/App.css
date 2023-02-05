@@ -13,12 +13,16 @@ body {
     padding: unset !important;
 }
 
-.p-dialog {
+.dark .p-dialog {
     background-color: black;
 }
 
-.mydialog .p-dialog .p-dialog-content {
-    background: #000000;
-    color: #495057;
-    padding: 0 1.5rem 2rem 1.5rem;
+.dark .p-dialog .p-dialog-header {
+    color: white;
+    background-color: #0f172a;
+}
+
+.dark .p-dialog .p-dialog-content {
+    color: white;
+    background-color: #0f172a;
 }
